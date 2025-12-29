@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Boyfriend's Day, My Love! ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Handlee&family=Gaegu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Handlee', cursive;
+            background: linear-gradient(135deg, #ffebee 0%, #ffe0b2 25%, #fff9c4 50%, #e0f7fa 75%, #f8bbd0 100%);
+            color: #4a4a4a;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            animation: fadeIn 1.5s ease-out;
+            border: 3px dashed #ffb6c1; /* Cute doodle-like border */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #e91e63;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px #f8bbd0;
+        }
+
+        h2 {
+            font-family: 'Gaegu', cursive;
+            color: #ad1457;
+            font-size: 2.2em;
+            margin-top: 40px;
+            border-bottom: 2px dotted #ffcdd2;
+            padding-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .intro-image { 
+            max-width: 100%;
+            border-radius: 20px;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border: 4px solid #ff92b2;
+        }
+
+        /* Pop-Up Letter Styling */
+        .popup-container {
+            position: relative;
+            background-color: #fffde7;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #ffccbc; /* Light doodle border */
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+        .popup-container::before {
+            content: '💌';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 120px;
+            opacity: 0.2;
+            transform: rotate(-20deg);
+        }
+        .popup-container::after {
+            content: '✨';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 120px;
+            opacity: 0.2;
+            transform: rotate(20deg);
+        }
+
+        .popup-header {
+            font-family: 'Pacifico', cursive;
+            color: #d81b60;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .open-button {
+            background-color: #ff6f91;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            font-family: 'Gaegu', cursive;
+            margin-top: 20px;
+        }
+
+        .open-button:hover {
+            background-color: #ff8a9a;
+            transform: scale(1.05);
+        }
+
+        .letter-content {
+            display: none; /* Hidden by default */
+            text-align: left;
+            margin-top: 30px;
+            padding: 25px;
+            background-color: #fff0f5; /* A softer pink background for the letter */
+            border-radius: 15px;
+            border: 2px dashed #ffb6c1; /* Doodle-like border for the letter */
+            box-shadow: inset 0 0 10px rgba(255, 182, 193, 0.5);
+        }
+
+        .letter-content p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            color: #e91e63;
+            font-weight: bold;
+        }
+
+        .flower-emoji {
+            font-size: 1.2em;
+            margin: 0 5px;
+            vertical-align: middle;
+            animation: bloom 2s infinite alternate;
+        }
+
+        @keyframes bloom {
+            from { transform: scale(1); opacity: 0.8; }
+            to { transform: scale(1.1); opacity: 1; }
+        }
+
+        .playlist-item {
+            display: flex;
+            align-items: center;
+            background-color: #fce4ec;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            border: 2px solid #f06292;
+            text-align: left;
+        }
+
+        .playlist-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .playlist-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            margin-right: 15px;
+            border: 2px solid #e91e63;
+        }
+
+        .playlist-item a {
+            color: #ad1457;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            flex-grow: 1;
+        }
+
+        .playlist-item a:hover {
+            text-decoration: underline;
+        }
+
+        .game-section {
+            background-color: #e0f7fa;
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 3px solid #80deea;
+        }
+
+        .game-input, .game-button {
+            padding: 12px 20px;
+            margin: 10px;
+            border-radius: 25px;
+            border: 2px solid #4dd0e1;
+            font-family: 'Handlee', cursive;
+            font-size: 1.1em;
+        }
+
+        .game-input {
+            width: calc(100% - 200px);
+            max-width: 300px;
+        }
+
+        .game-button {
+            background-color: #00bcd4;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .game-button:hover {
+            background-color: #26c6da;
+        }
+
+        .game-result {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #00838f;
+            font-weight: bold;
+        }
+
+        .memes-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .meme-card {
+            background-color: #fff;
+            border-radius: 18px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 3px solid #ffcc80;
+            transition: transform 0.3s ease;
+        }
+
+        .meme-card:hover {
+            transform: scale(1.03);
+        }
+
+        .meme-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border: 2px solid #ffb74d;
+        }
+
+        .meme-card p {
+            font-size: 1em;
+            color: #5d4037;
+            font-family: 'Gaegu', cursive;
+        }
+
+        .emoticon {
+            font-size: 1.5em;
+            vertical-align: middle;
+            margin: 0 3px;
+        }
+
+        .footer-message {
+            margin-top: 60px;
+            font-family: 'Pacifico', cursive;
+            color: #e91e63;
+            font-size: 2em;
+            text-shadow: 1px 1px #f8bbd0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Happy Boyfriend's Day, My Amazing Prajwal! 🥰</h1>
+        <p style="font-size: 1.5em; color: #d81b60;">To the man who stole my heart on August 18th, 2024, and keeps it forever! ✨</p>
+
+        <img src="https://i.postimg.cc/65d8LkBr/Gemini-Generated-Image-kt0yl8kt0yl8kt0y-1.png" alt="Prajwal and Me - Intro" class="intro-image">
+        <p>Remember how we started? From being a little rude to falling completely, irrevocably in love. Who knew a group chat on Instagram would lead me to my everything? Every single day, I fall deeper for you. You truly have <span class="highlight">all of me</span>.</p>
+
+        <div class="popup-container" id="popupLetterContainer">
+            <h2 class="popup-header">Click to Open My Special Letter to You! 💌</h2>
+            <button class="open-button" onclick="toggleLetter()">Open Me!</button>
+
+            <div class="letter-content" id="myLoveLetter">
+                <p>My Dearest Prajwal,</p>
+                <p>Happy Boyfriend's Day, my love! 🥳 It feels like just yesterday we were connecting on Instagram, and now here we are, building the most beautiful story. Remember how I was a bit (okay, maybe more than a bit!) prickly at first? It's crazy to think about how much my world changed when I finally let you in. You've truly turned my world into a garden of happiness. <span class="flower-emoji">🌸</span><span class="flower-emoji">🌼</span><span class="flower-emoji">🌺</span></p>
+                <p>Every quality of yours, from your incredible <span class="highlight">kindness</span> and loving nature to your amazing <span class="highlight">forgiving heart</span>, just makes me melt. You've forgiven my silly mistakes countless times, and that unconditional understanding means the world to me. And oh, those cute nicknames you call me! They always bring the biggest smile to my face. <span class="emoticon">😊</span></p>
+                <p>Your support is my anchor. The way you pick up my calls even when you're half-asleep because you know I need you... it's those little things that show me the depth of your love and care. You are my rock, my safe space, and my biggest cheerleader. Thank you for always being there, always. <span class="emoticon">💖</span></p>
+                <p>I dream of a future filled with us – traveling the world together, making a wonderful life, having those random, passionate moments, cuddling you close, and just staying by your side forever. You are my present, my future, my everything. My heart has never been so full of mixed emotions, but mostly, it's just overflowing with love for you. <span class="emoticon">💞</span></p>
+                <p>With all my love, always and forever,</p>
+                <p>Your Girlfriend <span class="emoticon">😘</span></p>
+            </div>
+        </div>
+
+        <h2>Songs That Remind Me of You 🎶</h2>
+        <p>A little soundtrack to our love story! Get ready to feel the feels. <span class="emoticon">🎧</span></p>
+
+        <div class="playlist-item">
+            <img src="https://i.postimg.cc/BPZY1FHs/Chat-GPT-Image-Sep-14-2025-08-12-26-PM.png" alt="Album Art">
+            <a href="https://open.spotify.com/track/4VQH4VluDUOsOuDxccTeyN?si=9a43dcc872d34e2e"> Sanctuary </a>
+        </div>
+        <div class="playlist-item">
+            <img src="https://i.postimg.cc/DJPpZ6Jh/Gemini-Generated-Image-z32deqz32deqz32d.png" alt="Album Art">
+            <a href="https://open.spotify.com/track/6cB0NDafmtEtOOOiQ7t0Uv?si=f669ce6a5e304132"> Lvr Boy</a>
+        </div>
+        <div class="playlist-item">
+            <img src="https://i.postimg.cc/R6LpFd6M/Gemini-Generated-Image-qtrp07qtrp07qtrp.png" alt="Album Art">
+            <a href="https://open.spotify.com/track/3qUKshcw2BWbqukX8n12U2?si=90d866729d6946e7"> Aaja piya tohe pyaar du</a>
+        </div>
+        <p style="font-size: 1.1em; margin-top: 20px;"></p>
+
+
+        <h2>Our Little Love Game! ❤️‍🔥</h2>
+        <div class="game-section">
+            <p>What's the best memory you have of us, my love? Type it in! <span class="emoticon">💭</span></p>
+            <input type="text" id="memoryInput" class="game-input" placeholder="My favorite memory is...">
+            <button class="game-button" onclick="showMemoryReaction()">Tell Me!</button>
+            <p id="gameResult" class="game-result"></p>
+        </div>
+
+        
+        <p class="footer-message">You are my happy place, Prajwal. Happy Boyfriend's Day, my sweet love! Forever yours. <span class="emoticon">♾️</span></p>
+
+    </div>
+
+    <script>
+        function toggleLetter() {
+            var letter = document.getElementById("myLoveLetter");
+            var button = document.querySelector(".open-button");
+            if (letter.style.display === "none" || letter.style.display === "") {
+                letter.style.display = "block";
+                button.textContent = "Close Letter";
+                button.style.backgroundColor = "#ff8a9a";
+            } else {
+                letter.style.display = "none";
+                button.textContent = "Open Me!";
+                button.style.backgroundColor = "#ff6f91";
+            }
+        }
+
+        function showMemoryReaction() {
+            var memory = document.getElementById("memoryInput").value;
+            var result = document.getElementById("gameResult");
+            if (memory) {
+                result.innerHTML = `Aw, that's such a beautiful memory, my love! I cherish that too. 🥰 Let's make many more!`;
+            } else {
+                result.innerHTML = "Don't be shy! Tell me your favorite memory! 😉";
+            }
+        }
+    </script>
+
+</body>
+</html>
