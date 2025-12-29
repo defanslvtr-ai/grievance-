@@ -18,6 +18,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            overflow: hidden;
         }
 
         .thank-you-container {
@@ -28,6 +29,8 @@
             max-width: 600px;
             width: 100%;
             border: 4px solid #ff69b4;
+            position: relative;
+            z-index: 1;
         }
 
         h2 {
@@ -43,15 +46,6 @@
             margin-bottom: 20px;
             color: #666;
             line-height: 1.5;
-        }
-
-        .kissing-gif {
-            max-width: 90%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 3px solid #880e4f;
-            margin-bottom: 30px;
         }
 
         .back-link {
@@ -70,24 +64,61 @@
         }
 
         @media (max-width: 480px) {
-            body {
-                padding: 20px;
-            }
-            .thank-you-container {
-                padding: 25px;
-            }
-            h2 {
-                font-size: 2em;
-            }
+            body { padding: 20px; }
+            .thank-you-container { padding: 25px; }
+            h2 { font-size: 2em; }
+        }
+
+        canvas { 
+            position: fixed; 
+            pointer-events: none; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            z-index: 0;
         }
     </style>
 </head>
 <body>
     <div class="thank-you-container">
         <h2>Thank You, Shona! 🥰</h2>
-
-        <!-- Go back link -->
+        <p>Your message has been received with love. 💖</p>
         <a class="back-link" href="index.html">Go Back to the Form (if you have more to say!)</a>
     </div>
+
+    <!-- Include Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Fire confetti
+        function launchConfetti() {
+            const duration = 5 * 1000; // 5 seconds
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 5,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#ff69b4', '#d81b60', '#ffb6c1', '#ffc0cb']
+                });
+                confetti({
+                    particleCount: 5,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#ff69b4', '#d81b60', '#ffb6c1', '#ffc0cb']
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+
+        // Launch confetti on page load
+        window.onload = launchConfetti;
+    </script>
 </body>
 </html>
