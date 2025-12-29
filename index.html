@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Love's Honest Heart: Feedback Form ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Times New Roman:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Times+New+Roman:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-pink: #d81b60; /* Deep Rose */
@@ -39,7 +39,6 @@
             position: relative;
         }
 
-        /* Times New Roman for the main title */
         h1 {
             font-family: 'Times New Roman', Times, serif;
             color: var(--secondary-purple);
@@ -50,7 +49,7 @@
 
         h1 span {
             display: block;
-            font-family: 'Times New Roman', cursive; /* Keeping a cute, handwritten subtitle */
+            font-family: 'Times New Roman', cursive;
             font-size: 0.5em;
             margin-top: 10px;
             color: var(--primary-pink);
@@ -159,59 +158,51 @@
             My love, I want us to be completely honest with each other, always. Sometimes it's hard to bring things up, so I made this private place just for you. If there’s anything—big or small—that’s bothering you about our relationship, something I did, or even just how you feel, please tell me. I promise to listen with an open heart. Thank you for trusting me. <span class="heart-emoji">😘💖</span>
         </p>
 
-       <form id="feedbackForm" action="https://formspree.io/f/mvzodyvr" method="POST">
-    <label for="name">Your Name: (Fill accordingly, it'll help me identify your mood or tone)</label>
-    <input type="text" id="name" name="Name" placeholder="Daddy 🫦, Prajwal, etc">
+        <form id="feedbackForm" action="https://formspree.io/f/mvzodyvr" method="POST">
+            <input type="hidden" name="_gotcha" style="display:none">
+            <label for="name">Your Name (Fill accordingly, it'll help me identify your mood or tone):</label>
+            <input type="text" id="name" name="Name" placeholder="Daddy 🫦, Prajwal, Your boyfriend, your babby, etc etc" autocomplete="name">
 
-    <label for="subject">The Topic of Your Grievance:</label>
-    <input type="text" id="subject" name="Subject" placeholder="e.g., 'Communication' , 'Need Attention' , 'Need More Sex' or 'Need more cuddles'"required>
+            <label for="subject">The Topic of Your Grievance  (What's on your mind?):</label>
+            <input type="text" id="subject" name="Subject" placeholder="e.g., 'Communication' , 'Need Attention' , 'Need More Sex' or 'Need more cuddles'" required>
 
-    <label for="grievance">Tell Me Everything:</label>
-    <textarea id="grievance" name="Grievance" placeholder="I feel... when... and I wish..."required></textarea>
+            <label for="grievance">Tell Me Everything (Pour out your feelings here, I'm ready to read it all):</label>
+            <textarea id="grievance" name="Grievance" rows="7" placeholder="I feel... when... and I wish..." required></textarea>
 
-    <label for="solution">How can I make it better?</label>
-    <textarea id="solution" name="Solution Ideas" placeholder="Maybe we can try to call each other whenever we need a long talk."></textarea>
+            <label for="solution">How can I make it better? (Guides me!):</label>
+            <textarea id="solution" name="Solution Ideas" rows="4" placeholder="Maybe we can try to call each other whenever we need a long talk."></textarea>
 
-    <button type="submit" class="submit-button">Send to her ✨</button>
-</form>
-
-<script>
-document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // Stop default form submission
-
-    const form = this;
-    const data = new FormData(form);
-
-    fetch(form.action, {
-        method: 'POST',
-        body: data,
-        headers: {
-            'Accept': 'application/json'
-        }
-    }).then(response => {
-        if (response.ok) {
-            // Redirect to local thank-you page after successful submission
-            window.location.href = 'thankyou.html';
-        } else {
-            alert('Oops! There was a problem submitting your form.');
-        }
-    }).catch(() => {
-        alert('Oops! There was a problem submitting your form.');
-    });
-});
-</script>
+            <button type="submit" class="submit-button">Send to her <span class="heart-emoji">✨</span></button>
+        </form>
 
         <p class="footer-text">
             You are my priority Prajwal Mohan. I love you Babby! <span class="heart-emoji">🫂</span>
         </p>
     </div>
 
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop default submission
+
+            const form = this;
+            const data = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    // Redirect to thank-you page
+                    window.location.href = 'thankyou.html';
+                } else {
+                    alert('Oops! There was a problem submitting your form.');
+                }
+            }).catch(() => {
+                alert('Oops! There was a problem submitting your form.');
+            });
+        });
+    </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
