@@ -160,17 +160,17 @@
         </p>
 
        <form id="feedbackForm" action="https://formspree.io/f/mvzodyvr" method="POST">
-    <label for="name">Your Name:</label>
+    <label for="name">Your Name: (Fill accordingly, it'll help me identify your mood or tone)</label>
     <input type="text" id="name" name="Name" placeholder="Daddy 🫦, Prajwal, etc">
 
     <label for="subject">The Topic of Your Grievance:</label>
-    <input type="text" id="subject" name="Subject" required>
+    <input type="text" id="subject" name="Subject"  placeholder="e.g., 'Communication' , 'Need Attention' , 'Need More Sex' or 'Need more cuddles'" required>
 
     <label for="grievance">Tell Me Everything:</label>
-    <textarea id="grievance" name="Grievance" required></textarea>
+    <textarea id="grievance" name="Grievance" placeholder="I feel... when... and I wish..." required></textarea>
 
     <label for="solution">How can I make it better?</label>
-    <textarea id="solution" name="Solution Ideas"></textarea>
+    <textarea id="solution" name="Solution Ideas" placeholder="Maybe we can try to call each other whenever we need a long talk." ></textarea>
 
     <button type="submit" class="submit-button">Send to her ✨</button>
 </form>
@@ -208,6 +208,7 @@ document.getElementById('feedbackForm').addEventListener('submit', function(e) {
 
 </body>
 </html>
+
 
 
 
